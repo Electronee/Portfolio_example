@@ -1,0 +1,446 @@
+---
+import Header from '../components/Header.astro';
+---
+
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Sam Mathys</title>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Antonio&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <Header />
+
+        <div class="intro">
+            <p>Salut ! Moi, C’est Mathys !</p>
+            <p>
+                Je suis passionné de musculation.<br />
+                Ensemble, transformons<br />
+                nos idées en<br />
+                <span class="green">Réussites !</span>
+            </p>
+        </div>
+
+        <img class="dumbbell" alt="" />
+
+        <div class="todo" id="services">
+            <h2>Todo workout:</h2>
+
+            <div class="row">
+                <img class="check" src="Logo/Logos noir/case-cochee-animee.webp" alt="Case cochée" />
+                <p class="text">12 ans d’expérience dans la musculation</p>
+                <div class="icons">
+                    <img class="icon" src="Logo/Logos noir/haltere.png" alt="Haltère" />
+                </div>
+            </div>
+
+            <div class="row">
+                <img class="check" src="Logo/Logos noir/case-cochee-animee.webp" alt="Case cochée" />
+                <p class="text">Un programme de suivi adapté à tous</p>
+                <div class="icons pair">
+                    <img class="icon" src="Logo/Logos noir/gars-maigre.png" alt="Gars maigre" />
+                    <img class="icon" src="Logo/Logos noir/gars-gros.png" alt="Gars gros" />
+                </div>
+            </div>
+
+            <div class="row">
+                <img class="check" src="Logo/Logos noir/case-cochee-animee.webp" alt="Case cochée" />
+                <p class="text">Une méthode approuvée par plusieurs clients</p>
+                <div class="icons">
+                    <img class="icon" src="Logo/Logos noir/petite-foule.png" alt="Petite foule" />
+                </div>
+            </div>
+
+            <div class="row">
+                <img class="check" src="Logo/Logos noir/case-cochee-animee.webp" alt="Case cochée" />
+                <p class="text">Je sais cuisiner :D</p>
+                <div class="icons">
+                    <img class="icon" src="Logo/Logos noir/toque-cuisinier.png" alt="Toque de cuisinier" />
+                </div>
+            </div>
+        </div>
+
+        <div class="about" id="a-propos">
+            <h2>À propos de moi:</h2>
+
+            <div class="about-row">
+                <div class="item left">
+                    <p class="about-text">200 kg<br />Soulever de terre</p>
+                    <img class="about-icon trophee" src="Logo/Logos noir/trophee.png" alt="Trophée" />
+                </div>
+                <div class="item">
+                    <img class="about-icon manette" src="Logo/Logos noir/manette.png" alt="Manette" />
+                    <p class="about-text jeux">Les jeux</p>
+                </div>
+            </div>
+
+            <div class="about-row">
+                <div class="item left">
+                    <p class="about-text">Les animés</p>
+                    <img class="about-icon" src="Logo/Logos noir/anime-4.png" alt="Animé" />
+                </div>
+                <div class="item">
+                    <img class="about-icon" src="Logo/Logos noir/toque-cuisinier.png" alt="Toque de cuisinier" />
+                    <p class="about-text">La cuisine !</p>
+                </div>
+            </div>
+        </div>
+
+        <picture>
+            <source media="(max-width: 768px)" srcset="Mobile%20Background.jpg" />
+            <img src="Background.png" alt="Portfolio de Sam Mathys" />
+        </picture>
+
+        <footer id="contact">
+            <p class="contact-title">N’hésitez pas à me contacter 😁 !</p>
+            <div class="contact">
+                <p>
+                    Téléphone : +33 32 23 32 32<br />
+                    linkedin : https://linked.fr/mathys_sam
+                </p>
+                <p>
+                    mail : mathys_sam@gmail.com<br />
+                    fiver : mathys_sm
+                </p>
+            </div>
+        </footer>
+
+        <script>
+            const dumbbell = document.querySelector('.dumbbell');
+
+            setTimeout(() => {
+                dumbbell.src = 'Logo/dumbbell_mathys_sam_transparent.webp?' + Date.now();
+            }, 2500);
+
+            function splitLetters(element) {
+                for (const node of [...element.childNodes]) {
+                    if (node.nodeType === Node.TEXT_NODE) {
+                        for (const char of node.textContent) {
+                            const letter = document.createElement('span');
+                            letter.className = 'letter';
+                            letter.textContent = char;
+                            node.before(letter);
+                        }
+                        node.remove();
+                    } else {
+                        splitLetters(node);
+                    }
+                }
+            }
+
+            document.querySelectorAll('p, h2').forEach(splitLetters);
+        </script>
+    </body>
+</html>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+
+    body {
+        margin: 0;
+        position: relative;
+        overflow-x: clip;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        pointer-events: none;
+    }
+
+    .intro {
+        position: absolute;
+        top: 200px;
+        left: 10%;
+        font-family: 'Antonio', sans-serif;
+        font-size: 48px;
+        color: white;
+        animation: reveal 1.5s ease-out 0.8s both;
+    }
+
+    @keyframes reveal {
+        from {
+            clip-path: inset(0 100% 0 0);
+            opacity: 0;
+        }
+        to {
+            clip-path: inset(0 0 0 0);
+            opacity: 1;
+        }
+    }
+
+    .dumbbell {
+        position: absolute;
+        top: -100px;
+        right: -29%;
+        width: 100%;
+    }
+
+    #services,
+    #a-propos {
+        scroll-margin-top: 100px;
+    }
+
+    .todo {
+        position: absolute;
+        top: 73vw;
+        left: 11%;
+        width: 77%;
+    }
+
+    h2 {
+        margin: 0;
+        font-family: 'Antonio', sans-serif;
+        font-size: 48px;
+        text-decoration: underline;
+        color: black;
+        width: fit-content;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        margin-bottom: -8vw;
+    }
+
+    .check {
+        width: 12.3vw;
+    }
+
+    .text {
+        flex: 1;
+        margin: 0;
+        font-family: 'Antonio', sans-serif;
+        font-size: 48px;
+        color: black;
+    }
+
+    .icons {
+        display: flex;
+        justify-content: center;
+        width: 20vw;
+    }
+
+    .icon {
+        width: 17vw;
+    }
+
+    .pair .icon {
+        margin: 0 -5vw;
+    }
+
+    .about {
+        position: absolute;
+        top: 139vw;
+        left: 6%;
+        width: 84%;
+    }
+
+    .about-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: -2vw;
+    }
+
+    .about h2 {
+        margin-left: 3vw;
+        margin-bottom: 8vw;
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        gap: 0;
+    }
+
+    .left {
+        margin-left: 5.8vw;
+        gap: 1.2vw;
+    }
+
+    .manette {
+        margin-right: 1 vw;
+    }
+
+    .jeux {
+        margin-right: 3vw;
+    }
+
+    .about-text {
+        font-family: 'Antonio', sans-serif;
+        font-size: 48px;
+        color: black;
+    }
+
+    .about-icon {
+        width: 16vw;
+    }
+
+    .trophee {
+        margin-left: -4.5vw;
+    }
+
+    footer {
+        padding: 20px 4vw;
+        border: 4px solid #ff8a00cc;
+        background: #222222;
+        font-family: 'Antonio', sans-serif;
+        color: white;
+    }
+
+    .contact-title {
+        margin: 0;
+        font-size: 48px;
+        text-align: center;
+    }
+
+    .contact {
+        display: flex;
+        justify-content: space-between;
+        font-size: 28px;
+    }
+
+    :global(.letter) {
+        transition: color 0.15s;
+    }
+
+    :global(.letter:hover) {
+        color: #e5322d;
+    }
+
+    p,
+    h2 {
+        animation: sway 1.8s ease-in-out infinite alternate;
+    }
+
+    .check,
+    .icon,
+    .about-icon {
+        animation: sway-icon 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes sway {
+        from {
+            transform: rotate(-0.3deg);
+        }
+        to {
+            transform: rotate(0.3deg);
+        }
+    }
+
+    @keyframes sway-icon {
+        from {
+            transform: rotate(-1.5deg);
+        }
+        to {
+            transform: rotate(1.5deg);
+        }
+    }
+
+    .green {
+        color: #2ecc71;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+        .intro {
+            top: 30vw;
+            left: 7.5vw;
+            font-size: 6vw;
+        }
+
+        .dumbbell {
+            top: 65vw;
+            right: -42vw;
+            width: 157vw;
+        }
+
+        h2 {
+            margin: 0 auto 5vw;
+            font-size: 7vw;
+        }
+
+        .todo {
+            top: 193vw;
+            left: 4vw;
+            width: 92vw;
+        }
+
+        .check {
+            width: 27vw;
+        }
+
+        .text {
+            font-size: 6vw;
+        }
+
+        .icons {
+            display: none;
+        }
+
+        picture {
+            display: block;
+            padding-bottom: 100vw;
+            background: #aaa29c;
+        }
+
+        .about {
+            top: 335vw;
+            left: 0;
+            width: 100%;
+        }
+
+        .about h2 {
+            margin: 0 auto 166vw;
+        }
+
+        .about-row {
+            flex-direction: column;
+            margin: 0;
+            padding-left: 20vw;
+        }
+
+        .item {
+            gap: 6vw;
+            margin: 0;
+        }
+
+        .left {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+
+        .trophee,
+        .manette,
+        .jeux {
+            margin: 0;
+        }
+
+        .about-icon {
+            width: 22vw;
+        }
+
+        .about-text {
+            font-size: 5vw;
+        }
+
+        .contact-title {
+            font-size: 6.5vw;
+        }
+
+        .contact {
+            flex-direction: column;
+            margin-top: 4vw;
+            padding-left: 16vw;
+            font-size: 4vw;
+        }
+
+        .contact p {
+            margin: 0;
+        }
+    }
+</style>

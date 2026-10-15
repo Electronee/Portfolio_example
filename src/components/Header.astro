@@ -1,0 +1,131 @@
+---
+---
+
+<header>
+    <nav>
+        <a href="#">
+            <img class="logo" src="Logo/Logos blanc/logo-developpe-couche-fixe.png" alt="Logo développé couché" />
+        </a>
+
+        <div class="links">
+            <a href="#services">Services</a>
+            <a href="#a-propos">À propos de moi</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="orange-bar"></div>
+</header>
+
+<script>
+    const logo = document.querySelector('.logo');
+
+    function climbToTop() {
+        const start = window.scrollY;
+        const startTime = performance.now();
+
+        function step(now) {
+            const time = Math.min((now - startTime) / 1500, 1);
+            const progress = time + 0.15 * Math.sin(2 * Math.PI * time);
+            const shake = (Math.random() - 0.5) * 16 * (1 - time);
+
+            window.scrollTo({ top: start * (1 - progress) + shake, behavior: 'instant' });
+
+            if (time < 1) {
+                requestAnimationFrame(step);
+            }
+        }
+
+        requestAnimationFrame(step);
+    }
+
+    logo.addEventListener('click', (event) => {
+        event.preventDefault();
+        climbToTop();
+
+        logo.src = 'Logo/Logos blanc/logo-developpe-couche.webp?' + Date.now();
+
+        setTimeout(() => {
+            logo.src = 'Logo/Logos blanc/logo-developpe-couche-fixe.png';
+        }, 2400);
+    });
+</script>
+
+<style>
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+        animation: slide-down 1s ease-out;
+    }
+
+    @keyframes slide-down {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+        padding: 3px 30px 3px 0;
+        background: #0d0d0dcc;
+    }
+
+    img {
+        height: 136px;
+        margin-left: -25px;
+        position: relative;
+        top: 7px;
+    }
+
+    .links {
+        display: flex;
+        gap: 31px;
+    }
+
+    a {
+        font-family: 'Antonio', sans-serif;
+        font-size: 36px;
+        color: white;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    a:hover {
+        color: #e5322d;
+    }
+
+    .orange-bar {
+        height: 6px;
+        background: #ff8a00cc;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+        nav {
+            height: 14vw;
+            padding: 0 3vw 0 0;
+        }
+
+        img {
+            height: 26vw;
+            margin-left: -5vw;
+            top: 1vw;
+        }
+
+        .links {
+            gap: 3vw;
+        }
+
+        a {
+            font-size: 3.8vw;
+        }
+    }
+</style>
