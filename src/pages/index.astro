@@ -28,35 +28,35 @@ import Header from '../components/Header.astro';
             <h2>Todo workout:</h2>
 
             <div class="row">
-                <img class="check" src="Logo/Logos noir/case-cochee-animee.webp" alt="Case cochée" />
+                <img class="check" src="/Portfolio_example/Logo/Logos noir/case-cochee-animee.webp" alt="Case cochée" />
                 <p class="text">12 ans d’expérience dans la musculation</p>
                 <div class="icons">
-                    <img class="icon" src="Logo/Logos noir/haltere.png" alt="Haltère" />
+                    <img class="icon" src="/Portfolio_example/Logo/Logos noir/haltere.png" alt="Haltère" />
                 </div>
             </div>
 
             <div class="row">
-                <img class="check" src="Logo/Logos noir/case-cochee-animee.webp" alt="Case cochée" />
+                <img class="check" src="/Portfolio_example/Logo/Logos noir/case-cochee-animee.webp" alt="Case cochée" />
                 <p class="text">Un programme de suivi adapté à tous</p>
                 <div class="icons pair">
-                    <img class="icon" src="Logo/Logos noir/gars-maigre.png" alt="Gars maigre" />
-                    <img class="icon" src="Logo/Logos noir/gars-gros.png" alt="Gars gros" />
+                    <img class="icon" src="/Portfolio_example/Logo/Logos noir/gars-maigre.png" alt="Gars maigre" />
+                    <img class="icon" src="/Portfolio_example/Logo/Logos noir/gars-gros.png" alt="Gars gros" />
                 </div>
             </div>
 
             <div class="row">
-                <img class="check" src="Logo/Logos noir/case-cochee-animee.webp" alt="Case cochée" />
+                <img class="check" src="/Portfolio_example/Logo/Logos noir/case-cochee-animee.webp" alt="Case cochée" />
                 <p class="text">Une méthode approuvée par plusieurs clients</p>
                 <div class="icons">
-                    <img class="icon" src="Logo/Logos noir/petite-foule.png" alt="Petite foule" />
+                    <img class="icon" src="/Portfolio_example/Logo/Logos noir/petite-foule.png" alt="Petite foule" />
                 </div>
             </div>
 
             <div class="row">
-                <img class="check" src="Logo/Logos noir/case-cochee-animee.webp" alt="Case cochée" />
+                <img class="check" src="/Portfolio_example/Logo/Logos noir/case-cochee-animee.webp" alt="Case cochée" />
                 <p class="text">Je sais cuisiner :D</p>
                 <div class="icons">
-                    <img class="icon" src="Logo/Logos noir/toque-cuisinier.png" alt="Toque de cuisinier" />
+                    <img class="icon" src="/Portfolio_example/Logo/Logos noir/toque-cuisinier.png" alt="Toque de cuisinier" />
                 </div>
             </div>
         </div>
@@ -67,10 +67,10 @@ import Header from '../components/Header.astro';
             <div class="about-row">
                 <div class="item left">
                     <p class="about-text">200 kg<br />Soulever de terre</p>
-                    <img class="about-icon trophee" src="Logo/Logos noir/trophee.png" alt="Trophée" />
+                    <img class="about-icon trophee" src="/Portfolio_example/Logo/Logos noir/trophee.png" alt="Trophée" />
                 </div>
                 <div class="item">
-                    <img class="about-icon manette" src="Logo/Logos noir/manette.png" alt="Manette" />
+                    <img class="about-icon manette" src="/Portfolio_example/Logo/Logos noir/manette.png" alt="Manette" />
                     <p class="about-text jeux">Les jeux</p>
                 </div>
             </div>
@@ -78,18 +78,18 @@ import Header from '../components/Header.astro';
             <div class="about-row">
                 <div class="item left">
                     <p class="about-text">Les animés</p>
-                    <img class="about-icon" src="Logo/Logos noir/anime-4.png" alt="Animé" />
+                    <img class="about-icon" src="/Portfolio_example/Logo/Logos noir/anime-4.png" alt="Animé" />
                 </div>
                 <div class="item">
-                    <img class="about-icon" src="Logo/Logos noir/toque-cuisinier.png" alt="Toque de cuisinier" />
+                    <img class="about-icon" src="/Portfolio_example/Logo/Logos noir/toque-cuisinier.png" alt="Toque de cuisinier" />
                     <p class="about-text">La cuisine !</p>
                 </div>
             </div>
         </div>
 
         <picture>
-            <source media="(max-width: 768px)" srcset="Mobile%20Background.jpg" />
-            <img src="Background.png" alt="Portfolio de Sam Mathys" />
+            <source media="(max-width: 768px)" srcset="/Portfolio_example/Mobile%20Background.jpg" />
+            <img src="/Portfolio_example/Background.png" alt="Portfolio de Sam Mathys" />
         </picture>
 
         <footer id="contact">
@@ -110,7 +110,7 @@ import Header from '../components/Header.astro';
             const dumbbell = document.querySelector('.dumbbell');
 
             setTimeout(() => {
-                dumbbell.src = 'Logo/dumbbell_mathys_sam_transparent.webp?' + Date.now();
+                dumbbell.src = '/Portfolio_example/Logo/dumbbell_mathys_sam_transparent.webp?' + Date.now();
             }, 2500);
 
             function splitLetters(element) {
@@ -263,7 +263,7 @@ import Header from '../components/Header.astro';
     }
 
     .manette {
-        margin-right: 1 vw;
+        margin-right: 1vw;
     }
 
     .jeux {
