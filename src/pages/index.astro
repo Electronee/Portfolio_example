@@ -6,14 +6,14 @@ import Header from '../components/Header.astro';
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
-        <title>Sam Mathys</title>
+        <title>Léo Durand</title>
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Antonio&display=swap" rel="stylesheet" />
     </head>
     <body>
         <Header />
 
         <div class="intro">
-            <p>Salut ! Moi, C’est Mathys !</p>
+            <p>Salut ! Moi, C’est Léo !</p>
             <p>
                 Je suis passionné de musculation.<br />
                 Ensemble, transformons<br />
@@ -89,7 +89,7 @@ import Header from '../components/Header.astro';
 
         <picture>
             <source media="(max-width: 768px)" srcset="/Portfolio_example/Mobile%20Background.jpg" />
-            <img src="/Portfolio_example/Background.png" alt="Portfolio de Sam Mathys" />
+            <img src="/Portfolio_example/Background.png" alt="Portfolio de Léo Durand" />
         </picture>
 
         <footer id="contact">
@@ -97,11 +97,11 @@ import Header from '../components/Header.astro';
             <div class="contact">
                 <p>
                     Téléphone : +33 32 23 32 32<br />
-                    linkedin : https://linked.fr/mathys_sam
+                    linkedin : https://linked.fr/leo_durand
                 </p>
                 <p>
-                    mail : mathys_sam@gmail.com<br />
-                    fiver : mathys_sm
+                    mail : leo.durand@example.com<br />
+                    fiver : leo_durand
                 </p>
             </div>
         </footer>
@@ -110,7 +110,7 @@ import Header from '../components/Header.astro';
             const dumbbell = document.querySelector('.dumbbell');
 
             setTimeout(() => {
-                dumbbell.src = '/Portfolio_example/Logo/dumbbell_mathys_sam_transparent.webp?' + Date.now();
+                dumbbell.src = '/Portfolio_example/Logo/dumbbell_leo_durand_transparent.webp?' + Date.now();
             }, 2500);
 
             function splitLetters(element) {
